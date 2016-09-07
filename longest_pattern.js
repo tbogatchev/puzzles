@@ -1,6 +1,7 @@
+//Given a number numChars, return the longest substring consisting of numChars unique characters
+
 var sampleString = "ssssmmmssssssssbbbfbfasdaasas";
-
-
+var numChars = 2;
 
 var longestPattern = function(string, numChars) {
   if (numChars == 0){
@@ -13,7 +14,8 @@ var longestPattern = function(string, numChars) {
     var letters = string.split('');
     var charCount = 0;
 
-    //lets start the next loop after we notice that repetition of the fist character ended.
+    //lets start the next recursive loop after we notice that repetition of the fist character ended.
+    //we will have to recurse much less this way. 
     var indexOfLatestFirstChar = null;
 
     for (var i = 0; i< letters.length; i++){
@@ -45,3 +47,6 @@ var longestPattern = function(string, numChars) {
     return '';
   }
 };
+
+//sample call
+console.log(longestPattern(sampleString, numChars));
